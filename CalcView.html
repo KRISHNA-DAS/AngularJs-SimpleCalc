@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>AngularJs-Calculator</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        button {
+            width: 100%;
+        }
+        
+        label {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+    <div align="center">
+        <table  >
+
+            <tr>
+                <td colspan="5">
+                    <input ng-model="view" type="text" onkeypress='false'/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="3">
+                    <table style="width:100%;">
+                        <tr ng-repeat="row in nums">
+                            <td ng-repeat="num in row">
+                                <button ng-click="btnClick(num)">{{num}}</button>
+                            </td>
+                        </tr>
+                        
+                        
+                    </table>
+                </td>
+                <td>
+                    <button>/</button>
+                </td>
+                <td rowspan="2">
+                    <button style="height:110%" ng-click="btnClick('c')">C</button>
+                </td>
+            </tr>
+            <tr>
+<td><button>*</button></td>
+            </tr>
+
+
+<tr>
+<td><button>-</button></td>
+    <td rowspan="2"><button style="height:110%">=</button></td>
+            </tr>
+
+<tr>
+<td colspan="2"><button ng-click="btnClick('0')">0</button></td>
+    <td><button ng-click="btnClick('.')">.</button ></td>
+    <td><button>+</button></td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+
+</html>
