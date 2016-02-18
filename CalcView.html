@@ -21,7 +21,7 @@
 
             <tr>
                 <td colspan="5">
-                    <input ng-model="view" type="text" onkeypress='false'/>
+                    <input ng-model="expression" disabled placeholder="0" type="text" onkeypress='return false'/>
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                     <table style="width:100%;">
                         <tr ng-repeat="row in nums">
                             <td ng-repeat="num in row">
-                                <button ng-click="btnClick(num)">{{num}}</button>
+                                <button ng-click="numClick(num)">{{num}}</button>
                             </td>
                         </tr>
                         
@@ -37,26 +37,26 @@
                     </table>
                 </td>
                 <td>
-                    <button>/</button>
+                    <button ng-disabled="!opEnable" ng-click="fnClick('/')">/</button>
                 </td>
                 <td rowspan="2">
-                    <button style="height:110%" ng-click="btnClick('c')">C</button>
+                    <button style="height:110%" ng-click="clrClick()">C</button>
                 </td>
             </tr>
             <tr>
-<td><button>*</button></td>
+<td><button ng-disabled="!opEnable" ng-click="fnClick('*')">*</button></td>
             </tr>
 
 
 <tr>
-<td><button>-</button></td>
-    <td rowspan="2"><button style="height:110%">=</button></td>
+<td><button ng-disabled="!minusEnable" ng-click="fnClick('-')">-</button></td>
+    <td rowspan="2"><button style="height:110%" ng-disabled="!opEnable" ng-click="ansClick()">=</button></td>
             </tr>
 
 <tr>
-<td colspan="2"><button ng-click="btnClick('0')">0</button></td>
-    <td><button ng-click="btnClick('.')">.</button ></td>
-    <td><button>+</button></td>
+<td colspan="2"><button ng-click="numClick('0')">0</button></td>
+    <td><button ng-disabled="!pointEnable" ng-click="pntClick()">.</button ></td>
+    <td><button ng-disabled="!opEnable"  ng-click="fnClick('+')">+</button></td>
             </tr>
 
         </table>
