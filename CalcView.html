@@ -39,12 +39,16 @@
                 <td>
                     <button ng-disabled="!opEnable" ng-click="fnClick('/')">/</button>
                 </td>
-                <td rowspan="2">
-                    <button style="height:110%" ng-click="clrClick()">C</button>
+                 <td>
+                    <button  ng-click="bkClick()"><b>&#8592;</b></button>
                 </td>
+                
             </tr>
             <tr>
 <td><button ng-disabled="!opEnable" ng-click="fnClick('*')">*</button></td>
+                <td>
+                    <button ng-click="clrClick()">C</button>
+                </td>
             </tr>
 
 

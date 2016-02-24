@@ -51,4 +51,39 @@ app.controller('ctrl', ['$scope', function ($scope) {
         pointadded = false;
         numadded = false;
     }
-}])
+    $scope.bkClick=function(){
+        $scope.expression= $scope.expression.slice(0,length-1);
+        var last=$scope.expression.slice(-1);
+        if(last==""){
+             $scope.expression = "";
+        $scope.opEnable = false;
+        $scope.pointEnable = true;
+        $scope.minusEnable = true;
+        pointadded = false;
+        numadded = false;
+            
+        }
+        else if(last=='+'||last=='*'||last=='-'||last=='/'){
+            $scope.opEnable = false;
+             $scope.minusEnable = false;
+              pointadded = false;
+              numadded = false;
+        }
+        else if(last=='.'){
+            $scope.pointEnable=false;
+            pointadded = true;
+            numadded = false;
+            $scope.opEnable=true;
+             $scope.minusEnable = true;
+        }
+        else{
+            $scope.pointEnable=true;
+            pointadded = false;
+            numadded=true;
+             $scope.opEnable=true;
+              $scope.minusEnable = true;
+        }
+        
+        };
+    
+}]);
